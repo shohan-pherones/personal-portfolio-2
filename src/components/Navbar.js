@@ -1,11 +1,15 @@
 import { HashLink } from "react-router-hash-link";
 
-const Navbar = () => {
+const Navbar = ({ footerNav }) => {
   return (
-    <nav className="flex justify-between container mx-auto mt-20 uppercase">
+    <nav
+      className={`flex justify-between container mx-auto ${
+        footerNav ? "mt-40" : "mt-20"
+      } uppercase`}
+    >
       <div>
         <HashLink smooth to="#home" className="link-item">
-          Rebecca Parker
+          {footerNav ? "Go to top" : "Rebecca Parker"}
         </HashLink>
       </div>
       <ul className="links flex flex-col gap-3">
